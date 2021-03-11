@@ -23,7 +23,7 @@ async function run() {
   , name = getRequiredInput('name')
   , isAuto = getRequiredInput('auto')
   // , isJson = retRequiredInput('is_json')npm run build
-  , content = {}
+  , content = getRequiredInput('content')
   , overwrite = getRequiredInput('overwrite').toLowerCase() == 'true'
   ;
 
