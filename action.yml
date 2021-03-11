@@ -27,6 +27,10 @@ inputs:
     description: The content of the tfvars file
     required: true
 
+outputs:
+  tfvars_file:
+    description: The fully qualified path to the tfvars file that was generated
+
 runs:
   using: node12
   main: dist/index.js
