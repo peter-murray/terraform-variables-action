@@ -1,0 +1,26 @@
+name: Test
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  test:
+    name: Test
+    
+    runs-on: ubuntu-20.04
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Run
+        id: run
+        uses: ./
+        with:
+          content: '{"name": "action-test"}'
+          
+      - name: Display Results
+        run: |
+          echo ${{ steps.run.outputs.tfvars_file }}
+          echo ""
+          cat ${{ steps.run.outputs.tfvars_file }}
