@@ -1,0 +1,36 @@
+name: Terraform tfvars file generator
+description: Generates a a tfvars file for use with terraform
+author: Peter Murray
+
+inputs:
+  outputDir:
+    description: The output directory for the generated file.
+    required: true
+    default: ${{ github.workspace }}
+
+  name:
+    description: The name of the tfvars file to create
+    required: true
+    default: 'terraform'
+
+  overwrite:
+    description: A flag to overwrite an existing file if it already exists
+    required: true
+    default: true
+
+  auto:
+    description: Whether or not to generate an 'auto' tfvars file
+    required: true
+    default: false
+
+  content:
+    description: The content of the tfvars file
+    required: true
+
+runs:
+  using: node12
+  main: dist/index.js
+
+branding:
+  icon: file
+  color: black

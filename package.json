@@ -1,0 +1,29 @@
+{
+  "name": "terraform-variables-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js",
+    "test": "mocha ./src/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peter-murray/terraform-variables-action.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peter-murray/terraform-variables-action/issues"
+  },
+  "homepage": "https://github.com/peter-murray/terraform-variables-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/io": "^1.0.2"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.27.0",
+    "chai": "^4.3.3",
+    "mocha": "^8.3.1"
+  }
+}
