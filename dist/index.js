@@ -21,16 +21,15 @@ execute();
 async function run() {
   const directory = getRequiredInput('outputDir')
   , name = getRequiredInput('name')
-  , isAuto = getRequiredInput('auto')
-  // , isJson = retRequiredInput('is_json')npm run build
+  , isAuto = getRequiredInputBoolean('auto')
   , content = getRequiredInput('content')
-  , overwrite = getRequiredInput('overwrite').toLowerCase() == 'true'
+  , overwrite = getRequiredInputBoolean('overwrite')
   ;
 
   // Defaulting to JSON for now
   const varsFileName = util.generateTfvarsFilename(name, true, isAuto);
   const file = await util.saveFile(directory, varsFileName, content, overwrite);
-  
+
   console.log(`Generated tfvars file at ${file}`);
   core.setOutput('tfvars_file', file);
 }
@@ -39,6 +38,10 @@ function getRequiredInput(name) {
   return core.getInput(name, {required: true});
 }
 
+function getRequiredInputBoolean(name) {
+  const value = getRequiredInput(name);
+  return value.toLowerCase() == 'true';
+}
 
 /***/ }),
 
