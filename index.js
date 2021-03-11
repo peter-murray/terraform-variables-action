@@ -22,7 +22,9 @@ async function run() {
 
   // Defaulting to JSON for now
   const varsFileName = util.generateTfvarsFilename(name, true, isAuto);
-  const file = util.saveFile(directory, varsFileName, content, overwrite);
+  const file = await util.saveFile(directory, varsFileName, content, overwrite);
+  
+  console.log(`Generated tfvars file at ${file}`);
   core.setOutput('tfvars_file', file);
 }
 
