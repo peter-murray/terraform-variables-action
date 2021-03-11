@@ -21,6 +21,6 @@ jobs:
           
       - name: Display Results
         run: |
-          echo ${{ steps.run.outputs.tfvars_file }}
+          echo "${{ steps.run.outputs.tfvars_file }}"
           echo ""
-          cat ${{ steps.run.outputs.tfvars_file }}
+          cat "${{ steps.run.outputs.tfvars_file }}"
