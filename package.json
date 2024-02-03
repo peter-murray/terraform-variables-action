@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/peter-murray/terraform-variables-action#readme",
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/io": "^1.1.2"
+    "@actions/core": "^1.10.1",
+    "@actions/io": "^1.1.3"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.34.0",
+    "@vercel/ncc": "^0.38.1",
     "chai": "^4.3.6",
     "mocha": "^10.1.0"
   }
